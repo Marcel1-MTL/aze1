@@ -1,7 +1,7 @@
 let Light_State = 0
 input.onPinPressed(TouchPin.P0, function () {
     if (Light_State == 0) {
-        Light_State = 3
+        Light_State = 2
         basic.showIcon(IconNames.Yes)
         radio.sendNumber(12)
     } else {
@@ -14,8 +14,8 @@ basic.forever(function () {
 })
 basic.forever(function () {
     if (Light_State == 1) {
-        pins.digitalWritePin(DigitalPin.P0, pins.digitalReadPin(DigitalPin.P0))
+        pins.digitalWritePin(DigitalPin.P2, pins.analogReadPin(AnalogPin.P1))
     } else {
-        pins.digitalWritePin(DigitalPin.P0, 0)
+        pins.digitalWritePin(DigitalPin.P2, 0)
     }
 })
