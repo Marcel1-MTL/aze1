@@ -1,7 +1,7 @@
 let Light_State = 0
 input.onPinPressed(TouchPin.P0, function () {
     if (Light_State == 0) {
-        Light_State = 2
+        Light_State = 1
         basic.showIcon(IconNames.Yes)
         radio.sendNumber(12)
     } else {
